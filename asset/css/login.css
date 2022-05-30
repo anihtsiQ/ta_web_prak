@@ -1,0 +1,18 @@
+body {
+  background-image: url(../img/Warung_br[1].jpg);
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  background-size: cover;
+}
+
+.ct {
+  margin-top: 16%;
+  margin-left: 50px;
+  background-color: #2a6464;
+  padding-bottom: 20px;
+  border-radius: 5px;
+}
+
+i.show {
+  margin-top: -20px;
+}
