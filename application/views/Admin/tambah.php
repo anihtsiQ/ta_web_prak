@@ -46,7 +46,7 @@ require_once "../config.php";
                             <h1>Tambah Barang Baru</h1>
                         </div>
                         <div class="card-body">
-                            <form action="" method="POST">
+                            <form action="<?=base_url('Admin/insert_br')?>" method="POST">
                                 <div class="form-group">
                                     <label for="">
                                         Nama Barang
@@ -59,16 +59,15 @@ require_once "../config.php";
                                     </label>
                                     <select name="kategori_br" class="form-select" aria-label="Disabled select example">
                                     <?php  
-                                        foreach ($result as $kategori) :
+                                        foreach($result as $kategori) :
                                     ?>
-                                        <option value="<?=$kategori['id_kategori']?>">
-                                            <?=$kategori['nama_kategori']?>
+                                        <option value="<?=$kategori['id_kategori'];?>">
+                                            <?=$kategori['kategori'];?>
                                         </option>
-                                    <? 
-                                        endforeach 
-                                    ?>
+                                    <?php 
+                                        endforeach; 
+                                    ?>                                
                                     </select>
-                                
                                     <div class="form-group">
                                         <label>
                                             Stok
@@ -76,6 +75,9 @@ require_once "../config.php";
                                         <input type="number" name="stok_br" class="form-control" placeholder="Jumlah">
                                     </div>
                                     <div>
+                                    <label>
+                                            Stok
+                                        </label>
                                         <input type="text" name="satuan" class="form-control" placeholder="satuan">
                                     </div>
                                     <button type="submit" class="btn btn-success mt-3" name="tambah_br">

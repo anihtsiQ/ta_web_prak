@@ -44,35 +44,35 @@ require_once "../config.php";
                                     <h1>Transaksi</h1>
                                 </div>
                                 <div class="col-3">
-                                <a href="penjualan.php" class="btn btn-lg">Tabel Penjualan</a>
+                                <a href="<?=base_url('Admin/penjualan');?>" class="btn btn-lg">Tabel Penjualan</a>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="" method="post">
+                            <form action="<?=base_url('Admin/insert_transaksi')?>" method="post">
                                 <div class="form-group">
                                     <label for="">
                                         Nama Pembeli
                                     </label>
-                                    <input type="text" name="nama_buy" class="form-control" autocomplete="off">
+                                    <input type="text" name="nama_pelanggan" class="form-control" autocomplete="off">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Barang</label>
-                                    <select name="nama_br" class="form-select" aria-label="Disabled select example">
-                                        <?php  
-                                            //$query = mysqli_query($conn, "SELECT * FROM barang ORDER BY nama_barang ASC");
-                                            //while($data = mysqli_fetch_array($query)) {
-                                            //    var_dump($data);
-                                        ?>
-                                            <option value="<?=$data['id_barang']?>">
-                                                <?=$data['nama_barang']?>
-                                            </option>
-                                        <?php //} ?>
+                                    <select name="id_br" class="form-select" aria-label="Disabled select example">
+                                    <?php  
+                                        foreach($result as $barang) :
+                                    ?>
+                                        <option value="<?=$barang['id_barang'];?>">
+                                            <?=$barang['barang'];?>
+                                        </option>
+                                    <?php 
+                                        endforeach; 
+                                    ?>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Jumlah</label>
-                                    <input type="number" name="jumlah_br" class="form-control">
+                                    <label >Jumlah</label>
+                                    <input type="number" name="jumlah" class="form-control">
                                 </div>
                                 <button type="submit" class="btn btn-success mt-3" name="proses_trans">
                                         Proses Pembelian

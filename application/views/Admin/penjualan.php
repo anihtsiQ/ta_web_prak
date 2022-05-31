@@ -28,19 +28,18 @@
                         <table class="table">
                             <tr>
                                 <th>Id Transaksi</th>
-                                <th>Nama Pembeli</th>
+                                <th>Nama Pelanggan</th>
                                 <th>Nama Barang</th>
                                 <th>Jumlah</th>
-                                <th>Tanggal</th>
                             </tr>
                                 <?php
                                     foreach($result as $trans) :
                                 ?>
                             <tr>
-                                <td>trns<?=$trans["id_trans"]?></td>
-                                <td><?=$trans["nama_buy"]?></td>
-                                <td><?=$trans["nama_barang"]?></td>
-                                <td><?=$trans["waktu"]?></td>
+                                <td><?=$trans["id_transaksi"]?></td>
+                                <td><?=$trans["nama_pelanggan"]?></td>
+                                <td><?=$trans["barang"]?></td>
+                                <td><?=$trans["jumlah"]?></td>
                             </tr>
                                 <?php  
                                     endforeach; 

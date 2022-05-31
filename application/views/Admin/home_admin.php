@@ -79,10 +79,10 @@
                                 <td><?=$barang["stok"]?></td>
                                 <td><?=$barang["satuan"]?></td>
                                 <td>
-                                <form action="<?=base_url('Admin/update_br')?>" method="POST">                                    
-                                    <input type="hidden" name="nama_br" value="<?=$barang["id_barang"]?>">
+                                <form action="<?=base_url('Admin/update_br') ?>" method="POST">                                    
+                                    <input type="hidden" name="id_br" value="<?=$barang["id_barang"]?>">
                                     
-                                    <input type="number" name="stok_br" class="form-control">
+                                    <input type="number" name="stok_br" class="form-control" required>
                                 </td>    
                                 <td>
                                     <button type="submit" class="btn btn-success" name="update_stok">

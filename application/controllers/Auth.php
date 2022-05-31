@@ -33,18 +33,18 @@ class Auth extends CI_Controller {
         $user = $this->db->get_where('user', ['username' => $username])->row_array();
 
         if($user){
-            if (password_verify($password, $user['password'])) {
+            if ($this->db->get_where('user', ['password' => $password])) {
                 $this->session->set_userdata(["login" => $user['id_user']]);
                 redirect('admin');
             }
             else {
-                /*$this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">
+                $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">
                 password salah!
                 </div>');
                 redirect('auth');
-                */
-                $this->session->set_userdata(["login" => $user['id_user']]);
-                redirect('admin');
+                
+                //$this->session->set_userdata(["login" => $user['id_user']]);
+                //redirect('admin');
             }
         }
         else {

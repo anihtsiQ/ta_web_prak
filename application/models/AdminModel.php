@@ -20,11 +20,33 @@ class AdminModel extends CI_Model {
 
     }
 
-    public function update_stok($id_barang,$stok_br){
-      $data = array(
-        'stok' => $stok_br);
-
-$this->db->where('id', $id_barang);
-$this->db->update('barang', $data);
+    public function update_stok($id_br,$stok_br){
+      $query = $this->db->get_where('barang',['id_barang' => $id_br])->row_array();
+      $stok_update = $query['stok'] + $stok_br;
+      //var_dump($query);
+      $this->db->where('id_barang', $id_br);
+      $this->db->update('barang',['stok' => $stok_update]);
     }
-}
+
+    public function insert_barang($data){
+      $this->db->insert('barang',$data);
+    }
+
+    public function insert_transaksi($transaksi){
+      $this->db->insert('transaksi',$transaksi);
+    }
+    
+    public function update_transaksi($id_br,$stok_br){
+      $query = $this->db->get_where('barang',['id_barang' => $id_br])->row_array();
+      $stok_update = $query['stok'] - $stok_br;
+      //var_dump($query);
+      $this->db->where('id_barang', $id_br);
+      $this->db->update('barang',['stok' => $stok_update]);
+    }
+
+    public function semua_penjualan(){
+      $query = $this->db->query('CALL SEMUA_PENJUALAN()');
+
+      return $query->result_array();
+    }
+  }
