@@ -71,16 +71,16 @@
                                 <th class="text-center">Update Stok</th>
                             </tr>
                                 <?php
-                                    foreach($tampil as $barang) :
+                                    foreach ($result as $barang) :
                                 ?>
                             <tr>
-                                <td><?=$barang["nama_kategori"]?></td>
-                                <td><?=$barang["nama_barang"]?></td>
+                                <td><?=$barang["kategori"]?></td>
+                                <td><?=$barang["barang"]?></td>
                                 <td><?=$barang["stok"]?></td>
                                 <td><?=$barang["satuan"]?></td>
                                 <td>
-                                <form action="" method="POST">                                    
-                                    <input type="hidden" name="nama_br" value="<?=$barang["nama_barang"]?>">
+                                <form action="<?=base_url('Admin/update_br')?>" method="POST">                                    
+                                    <input type="hidden" name="nama_br" value="<?=$barang["id_barang"]?>">
                                     
                                     <input type="number" name="stok_br" class="form-control">
                                 </td>    

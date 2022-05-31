@@ -1,6 +1,5 @@
 <?php
-/*
-session_start();
+/*session_start();
 if($_SESSION['status'] !== 'login') {
   header('location: ../index.php');
 }
@@ -34,7 +33,7 @@ require_once "../config.php";
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <!--CSS-->
-        <link rel="stylesheet" href="asset//css/style.css">
+        <link rel="stylesheet" href="asset//css/login.css">
         <title>Warung Mama Farhan</title>
     </head>
     <body>
@@ -60,13 +59,14 @@ require_once "../config.php";
                                     </label>
                                     <select name="kategori_br" class="form-select" aria-label="Disabled select example">
                                     <?php  
-                                        $query = mysqli_query($conn, "SELECT * FROM kategori order by nama_kategori asc");
-                                        while($data = mysqli_fetch_array($query)) {
+                                        foreach ($result as $kategori) :
                                     ?>
-                                        <option value="<?=$data['id_kategori']?>">
-                                            <?=$data['nama_kategori']?>
+                                        <option value="<?=$kategori['id_kategori']?>">
+                                            <?=$kategori['nama_kategori']?>
                                         </option>
-                                    <?php } ?>
+                                    <? 
+                                        endforeach 
+                                    ?>
                                     </select>
                                 
                                     <div class="form-group">
