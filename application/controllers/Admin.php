@@ -11,10 +11,20 @@ class Admin extends CI_Controller {
 		}
     }
     public function index(){
-        $data['result'] = $this->AdminModel->semua_barang();
+        $keyword = $this->input->post('keyword');
         
-        $this->load->view('Template/navbar');
-        $this->load->view('Admin/home_admin',$data);
+        if ($keyword) {
+            $data['result'] = $this->AdminModel->pencarian_barang($keyword);
+        
+            $this->load->view('Template/navbar');
+            $this->load->view('Admin/home_admin',$data);
+        }
+        else {
+            $data['result'] = $this->AdminModel->semua_barang();
+            
+            $this->load->view('Template/navbar');
+            $this->load->view('Admin/home_admin',$data); 
+        }
         
     }
     public function tambah(){

@@ -20,6 +20,21 @@ class AdminModel extends CI_Model {
 
     }
 
+    public function pencarian_barang($keyword){
+      
+      $this->db->select('*');
+      $this->db->from('barang');
+      $this->db->join('kategori', 'barang.id_kategori=kategori.id_kategori','innner');
+      $this->db->like('barang',$keyword);
+      $this->db->or_like('kategori',$keyword);
+      $this->db->order_by('kategori');
+      $this->db->order_by('barang');
+      $query = $this->db->get();
+
+      return $query->result_array();
+
+    }
+
     public function update_stok($id_br,$stok_br){
       $query = $this->db->get_where('barang',['id_barang' => $id_br])->row_array();
       $stok_update = $query['stok'] + $stok_br;
