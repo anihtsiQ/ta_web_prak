@@ -15,17 +15,14 @@ class Admin extends CI_Controller {
         
         if ($keyword) {
             $data['result'] = $this->AdminModel->pencarian_barang($keyword);
-        
-            $this->load->view('Template/navbar');
-            $this->load->view('Admin/home_admin',$data);
         }
         else {
             $data['result'] = $this->AdminModel->semua_barang();
             
-            $this->load->view('Template/navbar');
-            $this->load->view('Admin/home_admin',$data); 
         }
         
+        $this->load->view('Template/navbar');
+        $this->load->view('Admin/home_admin',$data); 
     }
     public function tambah(){
         $data['result'] = $this->AdminModel->kategori_barang();
