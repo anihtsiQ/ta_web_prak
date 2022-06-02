@@ -13,10 +13,9 @@
         <title>Warung Mama Farhan</title>
     </head>
     <body>
-
-        <div class="container mt-5">
+        <div class="container mt-5 center">
             <div class="row justify-content-center">
-                <div class="col-sm-3">
+                <div class="col-auto">
                 <div class="ct card">
                     <div class="card-header">
                         LOGIN
@@ -26,7 +25,7 @@
                         <form id="contact-form" action="<?= base_url('auth');?>" method="post" role="form">
                             <div class="form-group">
                                 <label> 
-                                    Username
+                                   Username
                                 </label>
                                 <input type="text" name="username" class="form-control" placeholder="username" autofocus autocomplete="off">
                             </div>

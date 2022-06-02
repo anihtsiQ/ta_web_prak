@@ -96,7 +96,7 @@ class Admin extends CI_Controller {
 
         echo"
         <script>
-            alert('Stok berhasil diupdate');
+            alert('Barang berhasil ditambahkan');
 			window.history.go(-1);
         </script>";
 

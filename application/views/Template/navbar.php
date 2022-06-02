@@ -17,10 +17,7 @@
         <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color:#2A6464">
             <div class="container">
                 <a class="navbar-brand" href="index.php">Warung Mama Farhan</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="<?= base_url('admin'); ?>">Home</a>
@@ -35,10 +32,8 @@
                             <a class="nav-link" onclick="return confirm('Melanjutkan untuk Logout?');" href="<?= base_url('Auth/logout'); ?>">Logout
                             <i class="fa fa-power-off"></i>
                             </a>
-                        </li>
-                        
+                        </li>                        
                     </ul>
-                </div>
             </div>
         </nav>
         

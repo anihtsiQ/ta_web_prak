@@ -48,13 +48,13 @@
                 <div class="col">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-8">
                                 Data Stok Barang 
                             </div>
-                            <div class="col-6">
-                                <form action="" method="POST">
+                            <div class="col-3">
+                                <form action="<?base_url('Admin/cari')?> method="POST">
                                     <div class="form-group">
-                                    <input type="text" name="keyword" autocomplete="OFF" size="50">
+                                    <input type="text" name="keyword" autocomplete="OFF">
                                     <button type="submit" class="btn btn-success" name="caribr">cari</button>
                                     </div>
                                 </form>
