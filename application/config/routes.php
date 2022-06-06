@@ -53,5 +53,5 @@ $route['default_controller'] = 'Auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['Admin'] = 'Admin/home_admin';
+$route['Admin'] = 'Admin';
 $route['update_br'] = 'Admin/update_br';

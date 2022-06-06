@@ -8,17 +8,19 @@ class Auth extends CI_Controller {
     }
 
     public function index(){
-        
+        //cek session untuk user jika sudah login
         if ($this->session->userdata('username')) {
             redirect('Admin');
         }
         
+        //validasi_form untuk form login
         $this->form_validation->set_rules('username','Username','required|trim');
         $this->form_validation->set_rules('password','Password','required|trim');
 
         if ($this->form_validation->run()==false){
             $this->load->view('Auth/login');
         }
+
         else {
             $this->_login();
         }
@@ -26,18 +28,21 @@ class Auth extends CI_Controller {
     }
 
     private function _login(){
-        
+        //mengambil input dari form login
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
+        //mengecek username dan password di database
         $this->db->where('username', $username);
         $this->db->where('password', $password);
         $user = $this->db->get('user')->row_array();
 
+        //jika username dan password benar maka session dan dilanjutkan ke halaman admin         
         if($user){
             $this->session->set_userdata(["login" => $user['id_user']]);
-                redirect('admin');
+                redirect('Admin');
         }
+        //jika username dan password salah maka kemungkinan username/password salah
         else {
             $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">
             username / password salah!
@@ -46,6 +51,7 @@ class Auth extends CI_Controller {
         }
     }
 
+    //fungsi logout dengan menghentikan session user
     public function logout()
 	{
 		$this->session->sess_destroy();

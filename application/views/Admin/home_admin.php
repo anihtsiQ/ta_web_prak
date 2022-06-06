@@ -44,23 +44,24 @@
     <body>
 
         <div class="container mt-5">
-            <div class="row">
                 <div class="col">
                     <div class="card-header">
-                        <div class="row">
-                            <div class="col-8">
-                                Data Stok Barang 
-                            </div>
-                            <div class="col-3">
-                                <form action="<?base_url('Admin/cari')?> method="POST">
-                                    <div class="form-group">
-                                    <input type="text" name="keyword" autocomplete="OFF">
-                                    <button type="submit" class="btn btn-success" name="caribr">cari</button>
+                        <div class="container">    
+                            <div class="row justify-content-between">
+                                    <div class="col-5 ">
+                                        Data Stok Barang 
                                     </div>
-                                </form>
+                                    <div class="col-4 ">
+                                        <form action="<?=base_url('Admin/')?>" method="POST">
+                                            <div class="form-group">
+                                            <input type="text" name="keyword" autocomplete="OFF">
+                                            <button type="submit" class="btn btn-success" name="caribr">cari</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                            </div>                            
                     <div class="card-body">
                         <table class="table">
                             <tr>
@@ -96,8 +97,7 @@
                                 ?>
                         </table>
                     </div>
-                </div>
-            </div>
+                </div>    
         </div>
 
     <!-- Optional JavaScript -->
