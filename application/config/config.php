@@ -23,6 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+/*Konfigurasi localhost pada link akses base url*/
 $config['base_url'] = 'http://localhost/ta_web_prak_1/';
 
 /*
